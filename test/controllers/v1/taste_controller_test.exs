@@ -2,7 +2,7 @@ defmodule EathubApi.V1.TasteControllerTest do
   use EathubApi.ConnCase
 
   alias EathubApi.Taste
-  @valid_attrs %{bitter: 42, idTaste: "some content", salty: 42, sour: 42, spicy: 42, sweet: 42}
+  @valid_attrs %{bitter: 42, salty: 42, sour: 42, spicy: 42, sweet: 42}
   @invalid_attrs %{}
 
   setup %{conn: conn} do
@@ -18,7 +18,6 @@ defmodule EathubApi.V1.TasteControllerTest do
     taste = Repo.insert! %Taste{}
     conn = get conn, v1_taste_path(conn, :show, taste)
     assert json_response(conn, 200)["data"] == %{"id" => taste.id,
-      "idTaste" => taste.idTaste,
       "salty" => taste.salty,
       "sour" => taste.sour,
       "bitter" => taste.bitter,

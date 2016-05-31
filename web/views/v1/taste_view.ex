@@ -11,7 +11,6 @@ defmodule EathubApi.V1.TasteView do
 
   def render("taste.json", %{taste: taste}) do
     %{id: taste.id,
-      idTaste: taste.idTaste,
       salty: taste.salty,
       sour: taste.sour,
       bitter: taste.bitter,
