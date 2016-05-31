@@ -12,6 +12,11 @@ defmodule EathubApi.Router do
           resources "/tastes", TasteController
           resources "/users", UserController
           resources "/following", FollowingController
+          resources "/comments", CommentController
+          resources "/votes", VoteController
+          resources "/steps", StepController
+          resources "/pictures", PictureController
+          resources "/recipes", RecipeController
         end
   end
 
