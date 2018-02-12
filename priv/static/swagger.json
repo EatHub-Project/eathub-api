@@ -1,0 +1,87 @@
+{
+  "swagger": "2.0",
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "List all users",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Trackers"
+            },
+            "description": "Ok"
+          }
+        },
+        "parameters": [],
+        "operationId": "EathubWeb.V1.UserController.index",
+        "description": "List all users"
+      }
+    }
+  },
+  "info": {
+    "version": "1.0",
+    "title": "Eathub"
+  },
+  "host": "localhost:4000",
+  "definitions": {
+    "Tracker": {
+      "type": "object",
+      "title": "User",
+      "required": [
+        "email"
+      ],
+      "properties": {
+        "website": {
+          "type": "string",
+          "description": "Just in case"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "ISO-8601",
+          "description": "When was last updated"
+        },
+        "provider": {
+          "type": "string",
+          "description": "Auth's provider"
+        },
+        "language": {
+          "type": "string",
+          "description": "Language"
+        },
+        "inserted_at": {
+          "type": "string",
+          "format": "ISO-8601",
+          "description": "When was initially inserted"
+        },
+        "id": {
+          "type": "string",
+          "description": "The ID of the user"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email"
+        },
+        "display_name": {
+          "type": "string",
+          "description": "Username"
+        },
+        "avatar": {
+          "type": "string",
+          "description": "User Avatar"
+        }
+      },
+      "example": {
+        "website": "http://ihave.a.website",
+        "provider": "Google",
+        "language": "Spanish",
+        "email": "email@addr.ess",
+        "display_name": "John Doe",
+        "avatar": "http://path.to.picture"
+      },
+      "description": "An activity which has been recorded"
+    }
+  }
+}
